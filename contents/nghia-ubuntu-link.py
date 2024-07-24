@@ -3,8 +3,8 @@ import os
 import tkinter as tk
 from tkinter import filedialog
 
-def choose_file_or_folder(event):
 
+def choose_file_or_folder(event):
 
     home_directory = os.path.expanduser("~")
     path = None
@@ -13,7 +13,7 @@ def choose_file_or_folder(event):
         path = filedialog.askdirectory(initialdir=home_directory, title="Select a folder")
     else:
         path = filedialog.askopenfilename(initialdir=home_directory, title="Select a file")
-    
+
     if path:
         print(f"Selected path: {path}")
 
@@ -29,8 +29,6 @@ def choose_file_or_folder(event):
                 print(f"Failed to create symbolic link: {e}")
 
     exit()
-
-
 
 
 root = tk.Tk()
